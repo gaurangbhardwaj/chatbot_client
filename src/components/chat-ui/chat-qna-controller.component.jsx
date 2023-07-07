@@ -14,7 +14,7 @@ export const ChatQnAController = () => {
   return (
     <div className="container">
       <div className="left">
-        <div className="flex-col justify-center h-screen">
+        <div className="flex-col justify-center h-screen left-nav-bar">
           <div className="nav-button">
             <Profile />
           </div>

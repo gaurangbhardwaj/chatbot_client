@@ -4,28 +4,28 @@
   overflow-x: hidden;
   /*border:1px solid;*/
   /*background-color: #fff;*/
-  height:40vh;
-  width: 415px;
+  height:45vh;
+  width: 610px;
   /* background-position: top; */
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   filter: drop-shadow(1px 3px 5px rgb(244, 128, 165));
 
 }
 
 
 #video-wrapper div{
-  width:250px;
-  height: 250px;
+  width:334px;
+  height: 334px;
   margin:0 auto;
   padding:20px 0 0 0;
 }
 video{
   display:block;
   /*border:1px solid;*/
-  width:300px;
-  height:260px !important;
+  width:270px;
+  height:270px !important;
   border-radius: 50%;
   background-color: transparent;
   position: absolute;

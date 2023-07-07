@@ -1,9 +1,14 @@
 // ChatInput.scss
 
 .chat-input {
-    width: 50%;
+    width: 90%;
     height: 60px;
     border: 1px solid #ccc;
+  }
+  
+.chat-input-container {
+    width: 50%;
+    height: 60px;
     button {
       color: gray;
       margin-left: 10px;

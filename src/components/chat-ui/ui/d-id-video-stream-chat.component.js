@@ -367,17 +367,22 @@ const VideoChatComponent = () => {
         body: JSON.stringify({
           script: {
             type: "text",
+            subtitles: "false",
             input: completionText,
-            text: completionText,
+            // provider: {
+            //   type: 'elevenlabs',
+            //   voice_id: '21m00Tcm4TlvDq8ikWAM'
+            // },
+            
             provider: {
               type: "microsoft",
-              voice_id: "en-US-JennyNeural",
-              voice_config: {
-                style: "Cheerful",
-              },
+              voice_id: "en-SG-LunaNeural",
             },
           },
+          ssml: "false",
           config: {
+            fluent: "true",
+            pad_audio: "3.5",
             stitch: true,
           },
           session_id: sessionId,
@@ -429,7 +434,7 @@ const VideoChatComponent = () => {
   };
 
   return (
-    <div className=" overflow-y-hidden ">
+    <div >
       <div
         id="video-wrapper"
         style={{
@@ -512,12 +517,12 @@ const VideoChatComponent = () => {
             </div>
           );
         })}
-
+{/* 
         {messages.length == 0 && !isLoading && (
           <div className="text-center font-light italic mt-10">
             Send Rachel a message...
           </div>
-        )}
+        )} */}
 
         {isLoading && (
           <div className="text-center font-light italic mt-10 animate-pulse">
@@ -531,16 +536,15 @@ const VideoChatComponent = () => {
           height: "107px",
           overflowY: "hidden",
         }}
-    className="fixed flex inset-x-0 bottom-0 w-100 pt-6 mb-30 mx-2 justify-center items-center"
+        className="fixed flex inset-x-0 bottom-0 w-100 pt-6 mb-30 mx-2 justify-center items-center"
       >
-{/* <ChatInputBox handleStop={handleStop} /> */}
-        <div className="flex justify-center items-center w-full">
-        <RecordMessage handleStop={handleStop} />
-        </div>
+        <ChatInputBox handleStop={handleStop} />
+        {/* <div className="flex justify-center items-center w-full">
+          <RecordMessage handleStop={handleStop} />
+        </div> */}
       </div>
     </div>
   );
 };
-
 
 export default VideoChatComponent;

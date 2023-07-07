@@ -4,14 +4,23 @@
     height: 100vh;
     margin-left: 30px;
     margin-right: 30px;
+
     .left {
-        flex: 40%;
-        padding: 15px 0px;
+        flex: 30%;
+        padding: 10px 0px;
         border-radius: 12px;
+        display: flex;
+        justify-content: center;
     }
+
     .right {
-        flex: 80%;
+        flex: 70%;
     }
+}
+
+.left-nav-bar {
+    margin-left: 20%;
+    margin-top: 4%;
 }
 
 .nav-button {

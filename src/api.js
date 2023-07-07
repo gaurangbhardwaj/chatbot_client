@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://192.168.1.6:3002/",
+  baseURL: "http://192.168.1.4:3002/",
 });
 
 export default instance;
@@ -35,7 +35,7 @@ export const loginUser = async (email, password) => {
 };
 export const loginUserWithGoogle = async () => {
   try {
-    window.location.href = "http://192.168.1.6:3002/api/auth/google";
+    window.location.href = "http://192.168.1.4:3002/api/auth/google";
   } catch (error) {
     throw error;
   }
