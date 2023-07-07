@@ -1,15 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import Background from "assets/images/bg.png";
-// import RecordMessage from "./record-message.component";
+import RecordMessage from "./record-message.component";
 import "./video-chat.styled.scss";
 import { getSpeechToTextCompletion } from "api";
 import Lottie from "lottie-react";
 import gradientHaloAnim from "assets/animations/gradiant-halo.json";
 import "react-chat-elements/dist/main.css";
 import { MessageBox } from "react-chat-elements";
+import ChatInputBox from "./chat-input.component";
+// import RecordMessage from "./record-message.component";
 const apiConfig = {
   url: "https://api.d-id.com",
-  key: "YWJoaW5hdmEuc2FueWFsMTZAZ21haWwuY29t:nWvqoCD4uYpvG7g-wrNn8",
+  key: "YWJoaW5hdmEuc2FueWFsMTZAZ21haWwuY29t:-ykxOgaaLcZSCw-W8Po6z",
 };
 const VideoChatComponent = () => {
   // refs
@@ -332,7 +334,7 @@ const VideoChatComponent = () => {
           idleVideo.current.style.opacity = 1;
           idleVideo.current.play();
           prevStartTime = null;
-        }, 500);
+        }, 800);
       }
     });
 
@@ -443,10 +445,10 @@ const VideoChatComponent = () => {
             height: "290px",
             position: "absolute",
             top: 0,
-        left: "30%",
+            left: "30%",
           }}
         />
-        <div style={{ position: "absolute", top: "10%", left: "40%" }}>
+        <div style={{ position: "absolute", top: "10%", left: "24%" }}>
           <video
             id="idle-video"
             playsInline
@@ -528,17 +530,17 @@ const VideoChatComponent = () => {
         style={{
           height: "107px",
           overflowY: "hidden",
-          boxShadow:
-            "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px",
         }}
-        className="fixed bg-white inset-x-0 bottom-0 w-100 pt-6  rounded-t-2xl shadow-xl shadow-zinc-400 text-center bg-gradient-to-r mb-30 mx-2"
+    className="fixed flex inset-x-0 bottom-0 w-100 pt-6 mb-30 mx-2 justify-center items-center"
       >
+{/* <ChatInputBox handleStop={handleStop} /> */}
         <div className="flex justify-center items-center w-full">
-          <div>{/* <RecordMessage handleStop={handleStop} /> */}</div>
+        <RecordMessage handleStop={handleStop} />
         </div>
       </div>
     </div>
   );
 };
+
 
 export default VideoChatComponent;
