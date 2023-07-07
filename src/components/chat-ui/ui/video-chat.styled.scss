@@ -1,0 +1,44 @@
+#video-wrapper {
+
+  position: relative;
+  overflow-x: hidden;
+  /*border:1px solid;*/
+  /*background-color: #fff;*/
+  height:38vh;
+  /* background-position: top; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: drop-shadow(1px 3px 5px rgb(244, 128, 165));
+
+}
+
+
+#video-wrapper div{
+  width:250px;
+  height: 250px;
+  margin:0 auto;
+  padding:20px 0 0 0;
+}
+video{
+  display:block;
+  /*border:1px solid;*/
+  width:300px;
+  height:260px !important;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  aspect-ratio: 1/1;
+  transition: opacity 0.4s ease-in-out 0s;
+  
+}
+.video-playing{
+  opacity: 1;
+}
+
+.video-paused{
+  opacity: 0;
+}

@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  
+    .left {
+      flex: 20%;
+      background-color: #EEF6FF;
+      padding: 15px 30px;
+      margin: 15px 10px;
+      height: 60%;
+      border-radius: 12px;
+    }
+  
+    .right {
+      flex: 80%;
+    }
+  }
+  
+  .login-form-button {
+    background: #1677ff;
+  }
+  
