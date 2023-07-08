@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 export const Profile = () => {
   const user = useSelector((state) => state.auth.user.user);
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
+<div style={{ display: "flex", alignItems: "center", marginBottom:"35px" }}>
       <svg
         style={{ display: "inline", marginRight: "15px" }}
         width="57"

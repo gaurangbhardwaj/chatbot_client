@@ -5,6 +5,7 @@ import { setUser as setUserAction } from "reducers/authSlice";
 import { useDispatch } from "react-redux";
 import { Profile } from "components";
 import "./chat-qna-controller.styled.scss";
+import { CiCircleCheck } from "react-icons/ci";
 
 export const ChatQnAController = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,10 @@ export const ChatQnAController = () => {
         <div className="flex-col justify-center h-screen left-nav-bar">
           <div className="nav-button">
             <Profile />
+          </div>
+          <div className="nav-button">
+        <CiCircleCheck size={24} style={{ display: "inline", marginRight: "15px" }}/>
+            Chat History
           </div>
           <div className="nav-button">
             <svg
@@ -35,7 +40,7 @@ export const ChatQnAController = () => {
                 stroke-linejoin="round"
               />
             </svg>
-            Share Wizard 
+            Share Wizard
           </div>
           <div
             type="primary"

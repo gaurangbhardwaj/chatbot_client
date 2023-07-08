@@ -434,7 +434,7 @@ const VideoChatComponent = () => {
   };
 
   return (
-    <div >
+<div className="chat-container">
       <div
         id="video-wrapper"
         style={{
@@ -471,7 +471,7 @@ const VideoChatComponent = () => {
           />
         </div>
       </div>
-      <div className="px-5" style={{ marginTop: "-6rem" }}>
+      <div className="px-5" style={{ marginTop: "1rem" }}>
         {messages?.map((message, index) => {
           return (
             <div
@@ -530,13 +530,12 @@ const VideoChatComponent = () => {
           </div>
         )}
       </div>
-
       <div
         style={{
           height: "107px",
           overflowY: "hidden",
         }}
-        className="fixed flex inset-x-0 bottom-0 w-100 pt-6 mb-30 mx-2 justify-center items-center"
+        className="flex inset-x-0 bottom-0 w-full pt-6 mb-30 mx-2 justify-start items-center"
       >
         <ChatInputBox handleStop={handleStop} />
         {/* <div className="flex justify-center items-center w-full">
