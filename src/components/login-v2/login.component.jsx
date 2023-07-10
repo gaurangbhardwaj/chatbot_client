@@ -19,12 +19,6 @@ import { loginUser } from "api";
 // Styles
 import "./login.style.scss";
 
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-  },
-});
-
 const STATE_MACHINE_NAME = "State Machine 1";
 
 export const Login = () => {
@@ -133,86 +127,86 @@ export const Login = () => {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <Container component="main" maxWidth="xs" className="login-container">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: "flex",
-            flexDirection: "column",
-            height: "85vh",
-            alignItems: "center",
-            justifyContent: "center",
-            border: "1px solid rgba(255, 255, 255, 0.22)",
-            borderRadius: "6px",
-            padding: "20px"
-          }}
-        >
-          <div className="login-container__rive-container">
-            <RiveComponent
-              style={{ width: "300px", height: "300px", borderRadius: "50%" }}
-              src="520-990-teddy-login-screen.riv"
-            />
-          </div>
-          <Typography className="pt-4" component="h1" variant="h5">
-            Welcome to{" "}
-            Sleek{" "}
-            {/* <img
+    <Container component="main" maxWidth="xs" className="login-container">
+      <CssBaseline />
+      <Box
+        sx={{
+          marginTop: 8,
+          display: "flex",
+          flexDirection: "column",
+          height: "82vh",
+          alignItems: "center",
+          justifyContent: "center",
+          border: "1px solid rgba(255, 255, 255, 0.22)",
+          borderRadius: "6px",
+          padding: "0 20px",
+        }}
+      >
+        <div className="login-container__rive-container">
+          <RiveComponent
+            style={{ width: "300px", height: "300px", borderRadius: "50%" }}
+            src="520-990-teddy-login-screen.riv"
+          />
+        </div>
+        <Typography className="pt-4" component="h1" variant="h5">
+          Welcome to Sleek{" "}
+          {/* <img
               src={require("assets/images/sleek_logo.png")}
               style={{ display: "inline-block", height: "44px" }}
               alt="sleek_logo"
             />{" "} */}
-            Wizard 🪄
-          </Typography>
+          Wizard 🪄
+        </Typography>
 
-          <form onSubmit={handleSubmit}>
-            <TextField
-              onChange={(event) => setUser(event.target.value)}
-              onBlur={setToDefaultLook}
-              value={user}
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
+        <form onSubmit={handleSubmit}>
+          <TextField
+            onChange={(event) => setUser(event.target.value)}
+            onBlur={setToDefaultLook}
+            value={user}
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+            autoFocus
+          />
 
-            <TextField
-              onChange={(event) => setPassword(event.target.value)}
-              onFocus={() => setHangUp(true)}
-              onBlur={setToDefaultLook}
-              //onE
-              value={password}
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
+          <TextField
+            onChange={(event) => setPassword(event.target.value)}
+            onFocus={() => setHangUp(true)}
+            onBlur={setToDefaultLook}
+            //onE
+            value={password}
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+          />
 
-            <LoadingButton
-              onBlur={setToDefaultLook}
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              disabled={!user || !password}
-              loading={isLogging}
-            >
-              Sign In
-            </LoadingButton>
+          <LoadingButton
+            onBlur={setToDefaultLook}
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+            disabled={!user || !password}
+            loading={isLogging}
+          >
+            Sign In
+          </LoadingButton>
 
-            {loginError && <Alert severity="error">{loginError}</Alert>}
-          </form>
-        </Box>
-      </Container>
-    </ThemeProvider>
+          {loginError && <Alert severity="error">{loginError}</Alert>}
+        </form>
+      </Box>
+      <Typography className="pt-2 text-center" variant="body2" gutterBottom>
+        Sleek's IndusWolves © 2023
+      </Typography>
+    </Container>
   );
 };
