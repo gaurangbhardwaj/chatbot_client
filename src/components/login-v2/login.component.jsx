@@ -144,6 +144,9 @@ export const Login = () => {
             height: "85vh",
             alignItems: "center",
             justifyContent: "center",
+            border: "1px solid rgba(255, 255, 255, 0.22)",
+            borderRadius: "6px",
+            padding: "20px"
           }}
         >
           <div className="login-container__rive-container">
