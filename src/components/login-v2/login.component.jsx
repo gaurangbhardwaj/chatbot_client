@@ -16,8 +16,15 @@ import Alert from "@mui/material/Alert";
 import { useRive, useStateMachineInput } from "rive-react";
 // APIs
 import { loginUser } from "api";
+// Styles
+import "./login.style.scss";
 
-const theme = createTheme();
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
+
 const STATE_MACHINE_NAME = "State Machine 1";
 
 export const Login = () => {
@@ -52,10 +59,14 @@ export const Login = () => {
   const handleSignIn = async (email = "", password = "") => {
     try {
       const response = await loginUser(email, password);
-      console.log("Success:", response);
       stateSuccess.fire();
-      // update store with user and token
-      dispatch(setUserAction({ user: response.user, token: response.token }));
+      setTimeout(
+        () =>
+          dispatch(
+            setUserAction({ user: response.user, token: response.token })
+          ),
+        1000
+      );
     } catch (error) {
       stateFail.fire();
       setLoginError(
@@ -122,8 +133,8 @@ export const Login = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+    <ThemeProvider theme={darkTheme}>
+      <Container component="main" maxWidth="xs" className="login-container">
         <CssBaseline />
         <Box
           sx={{
@@ -135,19 +146,20 @@ export const Login = () => {
             justifyContent: "center",
           }}
         >
-          <div>
+          <div className="login-container__rive-container">
             <RiveComponent
-              style={{ width: "400px", height: "400px" }}
+              style={{ width: "300px", height: "300px", borderRadius: "50%" }}
               src="520-990-teddy-login-screen.riv"
             />
           </div>
           <Typography className="pt-4" component="h1" variant="h5">
             Welcome to{" "}
-            <img
+            Sleek{" "}
+            {/* <img
               src={require("assets/images/sleek_logo.png")}
               style={{ display: "inline-block", height: "44px" }}
               alt="sleek_logo"
-            />{" "}
+            />{" "} */}
             Wizard 🪄
           </Typography>
 

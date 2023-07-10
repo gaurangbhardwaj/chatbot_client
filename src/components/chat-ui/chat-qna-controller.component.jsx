@@ -13,7 +13,7 @@ export const ChatQnAController = () => {
     dispatch(setUserAction(null));
   };
   return (
-    <div className="container">
+    <div className="chat-main-container">
       <div className="left">
         <div className="flex-col justify-center h-screen left-nav-bar">
           <div className="nav-button">
@@ -49,7 +49,7 @@ export const ChatQnAController = () => {
             onClick={handleLogout}
           >
             <svg
-              style={{ display: "inline", marginRight: "15px" }}
+              style={{ display: "inline", marginRight: "15px", color: "white" }}
               width="20"
               height="19"
               viewBox="0 0 20 19"
